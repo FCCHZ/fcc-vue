@@ -1,0 +1,12 @@
+{
+  "name": "fcc",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "yin",
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-connect": "^5.0.0"
+  },
+  "dependencies": {}
+}

@@ -1,0 +1,257 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+a {
+    text-decoration: none;
+    color: maroon;
+}
+ul{
+    list-style: none;
+}
+html, body {
+    width: 100%;
+    height: 100%;
+}
+header {
+    height: 65px;
+    width: 100%;
+    border-bottom: 1px solid rgba(0,0,0, 0.1);
+}
+header nav {
+    width: 1152px;
+    height: 65px;
+    margin: auto;
+}
+
+
+header nav ul {
+    list-style: none;
+    float: right;
+}
+header nav ul li {
+    display: inline-block;
+}
+
+header nav a:not(.nav-logo) {
+    text-decoration: none;
+    font-family: STHeitiSC-Medium;
+    font-size: 19px;
+    font-weight: 600;
+    line-height: 65px;
+    color: #004000;
+    letter-spacing: 0;
+    margin-right: 36px;
+}
+
+.nav-logo {
+    float: left;
+    margin-top: 15px;
+}
+
+.nav-logo img{
+    width: 387px;     
+}
+
+main {
+    width: 100%;
+}
+main > div {
+    width: 100%;
+}
+.fixed-width {
+    width: 1152px;
+    height: 100%;
+    margin: auto;
+}
+.hero {
+    height: 575px;
+    background-image: url("../assets/img/Rectangle.png"); 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#login {
+    height: 300px;
+    text-align: center;
+}
+#login h1,p {
+    font-weight: 600;
+    font-size: 30px;
+    color: #3F3F3F;
+}
+#login h1 {
+    margin-top: 80px;
+}
+#login h1 span {
+    color: #46AF36;
+}
+#login img {
+    margin-top: 40px;
+}
+#login a + p {
+    font-size: 22px;
+    margin-top: 20px;
+}
+
+#number {
+    height: 160px;
+    padding-top: 40px;
+    background: #46af36;
+    line-height: 120px;
+    font-size: 32px;
+    color: #fff;
+    text-align: center;
+}
+.number-style {
+    display: inline-block;
+    width: 60px;
+    height: 120px;
+    background: #F1F1F1;
+    border-radius: 6px;
+    font-size: 48px;
+    color: #999;
+    text-align: center;
+}
+h1 {
+    color: #46AF36;
+    font-size: 48px;
+}
+p {
+    font-size: 24px;
+}
+#learn {
+    height: 600px;
+    margin: 65px 0;
+    text-align: center;
+    background: url("../assets/img/learn.png") no-repeat center;
+}
+#learn h1 {
+    padding: 0;
+}
+
+#activity {
+    height: 960px;
+    background: #F3F9F3;
+}
+.fixed-width > h1 {
+    margin-top: 0;
+    padding-top: 65px;
+    text-align: center;
+}
+.fixed-width > p {
+    margin: 0 0 65px;
+    text-align: center;
+}
+
+#activity ul li {
+    width: 300px;
+    background: #fff;
+    float: left;
+    margin-right: 126px;
+    margin-bottom: 50px;
+}
+#activity ul li:nth-child(3n+3){
+    float: right;
+    margin: 0
+}
+#activity li img {
+    width: 100%;
+}
+#activity li h2 {
+    color: #333;
+    font-size: 19px;
+    margin: 10px 0 10px 5px;
+}
+#activity li p {
+    color: #999;
+    font-size: 16px;
+    margin: 10px 0 10px 5px;
+}
+
+#portfolio {
+    height: 760px;
+}
+#portfolio ul li {
+    width: 220px;
+    height: 200px;
+    border: 1px solid rgba(0,0,0,0.1);
+    text-align: center;
+    float: left;
+    margin-right: 80px;
+    margin-bottom: 32px;
+}
+#portfolio ul li:nth-child(4n+4) {
+    float: right;
+    margin: 0;
+}
+#portfolio ul li img{
+    margin-top: 4%;
+    width: 92%;
+    height: 80%;
+}
+#portfolio ul li p {
+    font-size: 16px;
+    color: #999;
+    text-align: left;
+    padding: 2%
+}
+
+#blog {
+    background: #F3F9F3;
+    text-align: center;
+    height: 1050px;
+}
+#blog ul li div {
+    background: #F9F9F9;
+    padding: 10% 0;
+}
+#blog img {
+    
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+}
+#blog ul li {
+    background: #FFFFFF;
+    border: 1px solid #DFDFDF;
+    height: 342px;
+    width: 265px;
+    float: left;
+    margin-right: 28px;
+    margin-bottom: 36px;
+}
+#blog ul li:nth-child(4n+4) {
+    float: right;
+    margin: 0;
+}
+#blog ul li h2 {
+    font-family: STHeitiSC-Light;
+    font-size: 16px;
+    color: #333333;
+    letter-spacing: 0;
+    padding: 5% 0 5%;
+}
+#blog ul li span {
+    font-family: STHeitiSC-Light;
+    font-size: 12px;
+    color: #999999;
+    letter-spacing: 0;
+}
+#blog ul li p {
+    padding: 5%;
+    color: #333;
+    font-size: 12px;
+    letter-spacing: 0;
+    line-height: 23px;
+    text-align: left;
+}
+
+#join {
+    text-align: center;
+    padding-bottom: 64px;
+}
+#join img {
+    width: 1024px;
+}
