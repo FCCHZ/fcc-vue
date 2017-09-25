@@ -18,7 +18,7 @@ npm run build
 
 ```
  
- ##项目文件目录结构
+ ## 项目文件目录结构
  - assets：存放图片、样式
  - components：存放公共样式、以及不常用组件
  - build：构建文件目录
