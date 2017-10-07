@@ -3,13 +3,13 @@
 		<div id="header-img">
 		<img src="../assets/logo-navbar.png" alt="">
 	</div>
-			<ul>
-				<li><a href="">首页</a></li>
-				<li><a href="">活动中心</a></li>
-				<li><a href="">前端工具</a></li>
-				<li><a href="">成员博客</a></li>
-				<li><a href="">关于我们</a></li>
-			</ul>
+	<div class="nav">
+		<router-link class="nav-list" to="/">首页</router-link>
+		<router-link class="nav-list" to="/active">活动中心</router-link>
+		<router-link class="nav-list" :to="{name:'Tool',params:{id:666,nam:'黄金良'}}">前端工具</router-link>
+		<router-link class="nav-list" to="/blog">成员博客</router-link>
+		<router-link class="nav-list" to="/about">关于我们</router-link>
+	</div>
 	</div>
 </template>
 
@@ -41,15 +41,12 @@
 	width: 100%;
 	height: 100%;
 }
-#header ul {
+.nav {
 	height: 50px;
 	float: right;
 }
-#header ul li {
-	float: left;
-	list-style: none;
-}
-#header ul li a {
+
+#header .nav-list {
 	display: inline-block;
 	text-decoration: none;
 	padding: 10px 25px;
