@@ -1,5 +1,8 @@
 <template>
 	<div id="blog">
+		<section class="search">
+			<input type="text" name='search' placeholder="请输入想要搜索的博客">
+		</section>
 		<p>{{msg}}</p>
 	</div>
 </template>
@@ -13,6 +16,11 @@
 		}
 	}
 </script>
-<style scoped>
-	
+<style lang = 'scss' scoped>
+#blog {
+	.search {
+
+	}
+}
+
 </style>
