@@ -8,6 +8,7 @@
 
 <script>
 import Header from '@/components/header'
+import FCCIcon from './assets/FCC-fontIcon/css/fccHangzhou.css'
 export default {
   name: 'app',
   data() {

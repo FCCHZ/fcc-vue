@@ -2,7 +2,7 @@
   <div class="hello">
     
     <vue-banner></vue-banner>
-    <div>{{msg}}</div>
+    <div><i class="fcc-home"></i>{{msg}}</div>
     
     <!-- <div class="imgg" v-for="str in listImg" :style="{ backgroundImage:'url('+ str.url+')'}"></div> -->
   </div>
