@@ -4,7 +4,7 @@ var config = require('../config')
 var vueLoaderConfig = require('./vue-loader.conf')
 
 // 获取绝对路径
-function resolve (dir) {
+function resolve(dir) {
   return path.join(__dirname, '..', dir)
 }
 
@@ -32,9 +32,12 @@ module.exports = {
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
       '@': resolve('src'),
+      'view': resolve('src/view'),
+      'components': resolve('src/components'),
+      'assets': resolve('src/assets'),
     }
   },
-    // 不同类型模块的处理规则
+  // 不同类型模块的处理规则
   module: {
     rules: [
       {
@@ -58,7 +61,7 @@ module.exports = {
           limit: 10000,
           // 其他的图片转移到静态资源文件夹
           name: utils.assetsPath('img/[name].[hash:7].[ext]')
-        }
+        },
       },
       {
         // 对多媒体资源文件使用url-loader
@@ -81,6 +84,10 @@ module.exports = {
           // 其他的资源转移到静态资源文件夹
           name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
         }
+      },
+      {
+        test: /\.scss$/,
+        loader:'style!css!sass'
       }
     ]
   }
