@@ -4,9 +4,13 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
+import store from './store'
+import Vuex from 'vuex'
 
 Vue.config.productionTip = false
 Vue.use(VueAwesomeSwiper)
+Vue.use(Vuex)
+
 
 import { swiper, swiperSlide } from 'vue-awesome-swiper'
 
@@ -14,6 +18,7 @@ import { swiper, swiperSlide } from 'vue-awesome-swiper'
 new Vue({
   el: '#app',
   router,
+  store,
   template: '<App/>',
   components: { 
     App,

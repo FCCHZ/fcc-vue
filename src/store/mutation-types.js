@@ -1,0 +1,1 @@
+export const SET_ACTIVEDETILS = 'SET_ACTIVEDETILS'

@@ -16,6 +16,8 @@
 ### 钱凯行
 - 配置sass-loader
 - 配置alias
-- 安装轮播图组件 npm install vue-awesome-swiper@2.5.4 --save
+- 安装轮播图组件 npm install vue-awesome-swiper@2.5.4 --save,这个必须使用2.5.4版本，当用npm i安装时安装的是最新版本，所以还要使用npm i --save vue-awesome-swiper@2.5.4重新安装一遍
 - 添加了一个路由过度动画
 - 活动中心主界面、卡片界面、列表界面已完成，还差活动详情界面
+
+- 安装vuex

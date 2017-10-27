@@ -10,9 +10,12 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "qartjs": "^1.1.2",
     "vue": "^2.4.2",
     "vue-awesome-swiper": "^2.5.4",
-    "vue-router": "^2.7.0"
+    "vue-qart": "^2.1.0",
+    "vue-router": "^2.7.0",
+    "vuex": "^3.0.0"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",

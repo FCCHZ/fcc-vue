@@ -1,35 +1,38 @@
 <template>
-  <div class="activites-list">
+<div>
+    <div class="activites-list" v-if="listType == 0" >
   <!--卡片样式-->
-    <div v-if="listType == 0" v-on:click="toActiveDetils(item)" class="item" v-for="(item, index) in activites" v-bind:key="item.index">
-          <div class="img">
-            <img v-bind:src="item.imgUrl" alt="">
-            <div v-if="item.enterState === '0'" class="enter">
-                    报名中
+        <div v-on:click="toActiveDetils(item)" class="item" v-for="(item, index) in activites" v-bind:key="item.index">
+            <div class="img">
+                <img v-bind:src="item.imgUrl" alt="">
+                <div v-if="item.enterState === '0'" class="enter">
+                        报名中
+                </div>
+                <div v-if="item.enterState === '1'" class="noenter">
+                        已过期
+                </div>
             </div>
-            <div v-if="item.enterState === '1'" class="noenter">
-                    已过期
+            <div class="title">
+                <span v-html="item.title"></span>
             </div>
-          </div>
-          <div class="title">
-              <span v-html="item.title"></span>
-          </div>
-          <div class="tag">
-              <span clas="date">{{ item.date }}</span>
-              <div>
-                  <span class="love">喜欢{{ item.love }}</span>
-                  <span class="person">人数{{ item.person }}</span>
-              </div>
-          </div>
-          <div class="location">
-              <div class="logo">
-                  <img class="fcc-logo" v-bind:src="item.fcclogoUrl" alt="">
-              </div>
-              <span v-html="item.location"></span>
-          </div>
-      </div>
-    <!--列表样式-->
-    <div v-if="listType == 1" class="item-horizontal" v-for="(item, index) in activites" v-bind:key="item.index">
+            <div class="tag">
+                <span clas="date">{{ item.date }}</span>
+                <div>
+                    <span class="love">喜欢{{ item.love }}</span>
+                    <span class="person">人数{{ item.person }}</span>
+                </div>
+            </div>
+            <div class="location">
+                <div class="logo">
+                    <img class="fcc-logo" v-bind:src="item.fcclogoUrl" alt="">
+                </div>
+                <span v-html="item.location"></span>
+            </div>
+        </div>
+    </div>
+    <div class="activites-list"  v-if="listType === 1">
+        <!--列表样式-->
+        <div class="item-horizontal" v-for="(item, index) in activites" v-bind:key="item.index">
           <div class="horizotal-img">
               <img v-bind:src="item.imgUrl" alt="">
           </div>
@@ -59,30 +62,31 @@
           </div>
       </div>
   </div>
+</div>
 </template>
 <script>
 export default {
-  props:{
-      activites: {
-          type: Array,
-          default: [],
-      }
+  props: {
+    activites: {
+      type: Array,
+      default: []
+    }
   },
   data() {
-      return {
-          listType: 0
-      }
+    return {
+      listType: 0
+    };
   },
   methods: {
-      changeListType(state) {
-          this.listType = state
-          console.log(state)
-      },
-      toActiveDetils(data) {
-          this.$router.push({name: 'activedetils', params: {data: data}})
-      }
+    changeListType(state) {
+      this.listType = state;
+      console.log(state);
+    },
+    toActiveDetils(data) {
+      this.$router.push({ name: "activedetils", params: { data: data } });
+    }
   }
-}
+};
 </script>
 <style lang="sass" scoped>
 $height: 354px

@@ -1,0 +1,1 @@
+export const activeDetils = state => state.activeDetils
