@@ -2,28 +2,30 @@
 	<div id="blog">
 		<section class="search">
 			<input type="text" name='search' placeholder="请输入想要搜索的博客" @input='search' v-model='searchValue'>
+			<i class="el-icon-search"></i>
 		</section>
-		<section class="member_blog">
-			<div class="person" v-for="(item, index) in banners">
-   			<img :src="imgSrc" @click='goBlog(item.url)'>
-				 <div class="content">
-					<h4>{{item.name}} 博客</h4>
-					<ul class="c_t">
-						<li class="html">HTML</li>
-						<li class="css">CSS</li>
-						<li class="js">JS</li>
-					</ul>
-					<ul class="c_b">
-						<li class="vue">VUE</li>
-						<li class="ang">Angular</li>
-					</ul>
-					<ul>
-						<li><img :src="item.imgUrl" class="avr"></li>
-						<li>{{item.name}}</li>
-					</ul>
+		<el-row  :gutter="0" class="member_blog">
+			<el-col :span="6" class="person" 
+				v-for="(item, i) in banners"
+				:key="item.name" 
+				:class="{mouse_move: i===index}" >
+				<div 
+				@mouseenter.prevent="toggleShade(i)" 
+				@mouseleave.prevent="toggleShade(-1)">
+					<img  class="banner_image" :src="imgSrc" @click='goBlog(item.url)'>
+					<div class="connect">  
+						<h4>{{item.name}} 博客</h4>
+						<el-row justify="space-around" class="skill">
+							<el-col v-for='v in item.skillList' :key='v.name' :span="8"><div class='skill_name'>{{ v.name }}</div></el-col>	
+						</el-row>
+						<ul>
+							<li><img :src="item.imgUrl" class="avr"></li>
+							<li>{{item.name}}</li>
+						</ul>
+					</div> 
 				</div>
-			</div>		
-		</section>
+			</el-col>		
+		</el-row>
 		<vue-Footer></vue-Footer>
 	</div>
 </template>
@@ -35,8 +37,8 @@
 	import four from  '../../assets/blog_huguangnan.jpg'
 	import five from '../../assets/blog_yangyang.jpg'
 	import six from '../../assets/blog_zhengbin.jpg'
+	import seven from '../../assets/blog_lixukai.jpg'
 	import pic from  '../../assets/shmaur.jpg'
-
 	export default {
 		name: 'blog',
 		data() {
@@ -47,48 +49,100 @@
 		  		{ 
 						name: '黄金良',  
 						imgUrl: first,
-						url: 'https://www.shmaur.com'
+						url: 'https://www.shmaur.com',
+						skillList: [
+							{ name:'UI设计' },
+							{ name:'HTML' },
+							{ name:'anuglar' }
+						]
 					},
 		  		{ 
 						name: '尹一鸣',
 						imgUrl: secord,
-						url: 'https://yinyimingall.github.io/blog/' 
+						url: 'https://yinyimingall.github.io/blog/',
+						skillList: [
+							{ name:'html' },
+							{ name:'js' },
+							{ name:'css' },
+							{ name:'angular' }
+						]
 					},
 		  		{ 
 						name: '钱凯行',  
 						imgUrl: three,
-						url: 'https://github.com/Zzhiren/zcpc '
+						url: 'https://github.com/Zzhiren/zcpc ',
+						skillList: [
+							{ name:'html' },
+							{ name:'js' },
+							{ name:'css' }
+						]
 
 					},
 					{ 
 						name: '胡光楠',
 						imgUrl: four,
-						url: 'https://github.com/blankul ' 
+						url: 'https://github.com/blankul',
+						skillList: [
+							{ name:'html' },
+							{ name:'js' },
+							{ name:'css' },
+							{ name:'jquery' },
+							{ name:'vue' }
+						]
 					},
 					{ 
 						name: '杨扬',
 						imgUrl: five,
-						url: 'https://github.com/pecora9264' 
+						url: 'https://github.com/pecora9264',
+						skillList: [
+							{ name:'html' },
+							{ name:'js' },
+							{ name:'css' },
+							{ name:'jquery' }
+						] 
 					},
 					{ 
 						name: '郑斌',
 						imgUrl: six,
-						url: 'http://www.jianshu.com/u/7ee022573352'
+						url: 'http://www.jianshu.com/u/7ee022573352',
+						skillList: [
+							{ name:'html' },
+							{ name:'js' },
+							{ name:'css' },
+							{ name:'Vue' }
+						]
+					},
+					{ 
+						name: '李序锴',
+						imgUrl: seven,
+						url: 'http://www.jianshu.com/u/7ee022573352',
+						skillList: [
+							{ name:'后端' },
+							{ name:'前端' }
+						]
 					}
-				]
+				],
+				index: -1
 			}
 		},
 		methods: {
 			goBlog(url){
 				window.location.href = url
 			},
-
+			toggleShade (type) {
+				this.index = type;
+	  		},
 			search() {
 				this.banners = window.banners.filter((v, i) => {
 					return v.name.indexOf(this.searchValue) !== -1
+				}),
+				this.banners.skillList = window.banners.filter((v, i) => {
+					return v.name.indexOf(this.searchValue) !== -1
 				})
+				
 			}
 		},
+		
 		components:{
 			"vue-Footer": fccFooter
   	},
@@ -105,6 +159,12 @@
 		margin: 20px auto;
 		width: 460px;
 		height: 50px;
+		position: relative;
+		i{
+			position: absolute;
+			top: 40%;
+		  right: 60px;
+		}
 		input {
 			width: 420px;
 			border: 1px solid #e1e1e1;
@@ -112,51 +172,52 @@
 			text-indent: 20px;
 			font-size: 14px;
 		}
+
 	}
 	.member_blog{
-	
-		display: flex;
-	  justify-content: center;
-		flex-wrap:wrap;
+		width: 90%;
+		margin: 20px auto;
 		.person{
-			margin: 15px;
-			.content{
-				border:1px	solid #eeeeee;
-				h4{
-				padding: 15px;
-				color: #797772;
+			width: 21%;
+			margin: 2%;
+			&.mouse_move{
+				outline:10px solid white;
+				box-shadow:0px 0px 10px 15px #eeeeee;
 			}
-			ul{
-				display: flex;
-				justify-content: center;
-				li{
-					margin: 10px 20px;
-				}
-				.html{
-					color: #35CE23;
-				}
-				.css{
-					color: #17B7CF;
-				}
-				.js{
-					color: #F06A0B;
-				}
-				.vue{
-					color: #48A88A;
-				}
-				.ang{
-					color: #BC519B;
-				}
-				.avr{
-					width: 30px;
-					height: 30px;
-					border-radius: 15px;
+			.banner_image{
+				width: 100%;
+			}
+			margin-top: 20px;
+			.connect{
 				
+				border:1px solid #eeeeee;
+				h4{
+					padding: 20px 0 0 10px;
+					text-align: left;
 				}
+				.skill{
+					height: 80px;
+					color: #6e6e6e;
+					.skill_name {
+						text-align: center;	
+						padding-top: 20px;
+					}
+				}	
+				ul{
+					display: flex;
+					justify-content: center;
+					li{
+						margin: 10px 20px;
+					}
+				
+					.avr{
+						width: 30px;
+						height: 30px;
+						border-radius: 15px;
+					}
 			}
 			}
-		
-
+			
 		}
 	}
 }
