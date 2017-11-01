@@ -135,9 +135,6 @@
 			search() {
 				this.banners = window.banners.filter((v, i) => {
 					return v.name.indexOf(this.searchValue) !== -1
-				}),
-				this.banners.skillList = window.banners.filter((v, i) => {
-					return v.name.indexOf(this.searchValue) !== -1
 				})
 				
 			}
@@ -180,10 +177,20 @@
 		.person{
 			width: 21%;
 			margin: 2%;
+			border:10px solid white;
+			transition:All 0.2s ease-in-out;
+			-webkit-transition:All 0.2s ease-in-out;
+			-moz-transition:All 0.2s ease-in-out;
+			-o-transition:All 0.2s ease-in-out;
 			&.mouse_move{
-				outline:10px solid white;
-				box-shadow:0px 0px 10px 15px #eeeeee;
+				box-shadow:0px 0px 15px 8px #E6E6E6;
+				transform:translate(0,-15px);
+				-webkit-transform:translate(0,-15px);
+				-moz-transform:translate(0,-15px);
+				-o-transform:translate(0,-15px);
+				-ms-transform:translate(0,-15px);
 			}
+		
 			.banner_image{
 				width: 100%;
 			}
