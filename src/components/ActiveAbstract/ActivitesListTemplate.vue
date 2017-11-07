@@ -2,7 +2,7 @@
 <div>
     <div class="activites-list" v-if="listType == 0" >
   <!--卡片样式-->
-        <div v-on:click="toActiveDetils(item)" class="item" v-for="(item, index) in activites" v-bind:key="item.index">
+        <div v-on:click="toActiveDetils(item.id)" class="item" v-for="(item, index) in activites" v-bind:key="item.index">
             <div class="img">
                 <img v-bind:src="item.imgUrl" alt="">
                 <div v-if="item.enterState === '0'" class="enter">
@@ -32,7 +32,7 @@
     </div>
     <div class="activites-list"  v-if="listType === 1">
         <!--列表样式-->
-        <div class="item-horizontal" v-for="(item, index) in activites" v-bind:key="item.index">
+        <div v-on:click="toActiveDetils(item.id)" class="item-horizontal" v-for="(item, index) in activites" v-bind:key="item.index">
           <div class="horizotal-img">
               <img v-bind:src="item.imgUrl" alt="">
           </div>
@@ -65,6 +65,8 @@
 </div>
 </template>
 <script>
+
+
 export default {
   props: {
     activites: {
@@ -82,8 +84,8 @@ export default {
       this.listType = state;
       console.log(state);
     },
-    toActiveDetils(data) {
-      this.$router.push({ name: "activedetils", params: { data: data } });
+    toActiveDetils(id) {
+      this.$router.push({ name: "activedetils", params: { id } });
     }
   }
 };

@@ -34,7 +34,7 @@
     </div>
 </template>
 <script>
-import ActivitesListTemplate from 'view/Active/ActiveAbstract/ActivitesListTemplate'
+import ActivitesListTemplate from 'components/ActiveAbstract/ActivitesListTemplate'
 
 export default {
     data() {

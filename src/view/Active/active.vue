@@ -15,9 +15,9 @@
 			<div class="content">
 				<swiper :options="activitSiteSwiper" ref="mySwiper">
 					<swiper-slide class="swiper-img" v-for="(item, index) in activites.activitSite.data" v-bind:key="item.id">
-						<img v-bind:src="item.imgUrl" alt="">
+						<img v-bind:src="item.imgUrl" alt="" v-on:click="toActiveDetils(item.id)">
 					</swiper-slide>
-					<div class="swiper-pagination" slot="pagination"></div>
+					<!-- <div class="swiper-pagination" slot="pagination"></div> -->
 					<!-- <div class="swiper-button-prev" slot="button-prev"></div> -->
 					<!-- <div class="swiper-button-next" slot="button-next"></div> -->
 					<!-- <div class="swiper-scrollbar" slot="scrollbar"></div> -->
@@ -35,10 +35,19 @@
 	</div>
 </template>
 <script>
-import ActivitesSwiperTemplate from 'view/Active/ActiveAbstract/ActivitesSwiperTemplate'
-import ActivitesListTemplate from 'view/Active/ActiveAbstract/ActivitesListTemplate'
-import ActivitySiteSwiper from 'view/Active/ActiveAbstract/swiper'
+import ActivitesSwiperTemplate from 'components/ActiveAbstract/ActivitesSwiperTemplate'
+import ActivitesListTemplate from 'components/ActiveAbstract/ActivitesListTemplate'
+import ActivitySiteSwiper from 'components/ActiveAbstract/swiper'
 import { swiper, swiperSlide } from 'vue-awesome-swiper'
+import fcclogo from "assets/android-chrome-192x192.png"
+import active04_16 from "assets/active04_16.jpg"
+import active05_06 from "assets/active05_06.jpg"
+import activity_img01 from "assets/activity_img01.jpg"
+import activity_img02 from "assets/activity_img02.jpg"
+import activity_img03 from "assets/activity_img03.jpg"
+import activity_img04 from "assets/activity_img04.jpg"
+import activity_img05 from "assets/activity_img05.jpg"
+import activity_img06 from "assets/activity_img06.jpg"
 
 export default {
 	name: 'active',
@@ -83,45 +92,53 @@ export default {
 				recentActivites: {
 					title: '近期活动',
 					data: [
-						{ 'id': 1, imgUrl: require('../../assets/active04_16.jpg'), "linkUrl": '' },
-						{ 'id': 2, imgUrl: require('../../assets/active05_06.jpg'), "linkUrl": '' },
-						{ 'id': 3, imgUrl: require('../../assets/active04_16.jpg'), "linkUrl": '' },
-						{ 'id': 4, imgUrl: require('../../assets/active05_06.jpg'), "linkUrl": '' }
+						{"id": 0, "fcclogoUrl": fcclogo, "imgUrl": active04_16, "title": "麦尖天台open mic音乐会——你可以成为歌手","city": "杭州", "location": "杭州知味书屋", "data": "9-12", "startTime": "2017年10月7日 19:30", "endTime": "2017年10月7日 19:30", "auota": "200", "content": "", "love": 666, "person": 666, "enterState": 0},
+						{"id": 1, "fcclogoUrl": fcclogo, "imgUrl": active05_06, "title": "麦尖天台open mic音乐会——你可以成为歌手","city": "杭州", "location": "杭州知味书屋", "data": "9-12", "startTime": "2017年10月7日 19:30", "endTime": "2017年10月7日 19:30", "auota": "200", "content": "", "love": 666, "person": 666, "enterState": 0},
+						{"id": 2, "fcclogoUrl": fcclogo, "imgUrl": activity_img01, "title": "麦尖天台open mic音乐会——你可以成为歌手","city": "杭州", "location": "杭州知味书屋", "data": "9-12", "startTime": "2017年10月7日 19:30", "endTime": "2017年10月7日 19:30", "auota": "200", "content": "", "love": 666, "person": 666, "enterState": 1},
+						{"id": 3, "fcclogoUrl": fcclogo, "imgUrl": activity_img02, "title": "麦尖天台open mic音乐会——你可以成为歌手","city": "杭州", "location": "杭州知味书屋", "data": "9-12", "startTime": "2017年10月7日 19:30", "endTime": "2017年10月7日 19:30", "auota": "200", "content": "", "love": 666, "person": 666, "enterState": 1},
+						{"id": 4, "fcclogoUrl": fcclogo, "imgUrl": activity_img03, "title": "麦尖天台open mic音乐会——你可以成为歌手","city": "杭州", "location": "杭州知味书屋", "data": "9-12", "startTime": "2017年10月7日 19:30", "endTime": "2017年10月7日 19:30", "auota": "200", "content": "", "love": 666, "person": 666, "enterState": 1},
+						{"id": 5, "fcclogoUrl": fcclogo, "imgUrl": activity_img04, "title": "麦尖天台open mic音乐会——你可以成为歌手","city": "杭州", "location": "杭州知味书屋", "data": "9-12", "startTime": "2017年10月7日 19:30", "endTime": "2017年10月7日 19:30", "auota": "200", "content": "", "love": 666, "person": 666, "enterState": 1},
+						{"id": 6, "fcclogoUrl": fcclogo, "imgUrl": activity_img05, "title": "麦尖天台open mic音乐会——你可以成为歌手","city": "杭州", "location": "杭州知味书屋", "data": "9-12", "startTime": "2017年10月7日 19:30", "endTime": "2017年10月7日 19:30", "auota": "200", "content": "", "love": 666, "person": 666, "enterState": 1},
+						{"id": 7, "fcclogoUrl": fcclogo, "imgUrl": activity_img06, "title": "麦尖天台open mic音乐会——你可以成为歌手","city": "杭州", "location": "杭州知味书屋", "data": "9-12", "startTime": "2017年10月7日 19:30", "endTime": "2017年10月7日 19:30", "auota": "200", "content": "", "love": 666, "person": 666, "enterState": 1}
 					],
 				},
 				historyActivites: {
 					title: '历史活动',
 					data: [
-						{ 'id': 1, imgUrl: require('../../assets/active04_16.jpg'), "linkUrl": '' },
-						{ 'id': 2, imgUrl: require('../../assets/active05_06.jpg'), "linkUrl": '' },
-						{ 'id': 3, imgUrl: require('../../assets/active04_16.jpg'), "linkUrl": '' },
-						{ 'id': 4, imgUrl: require('../../assets/active05_06.jpg'), "linkUrl": '' }
+						{"id": 0, "fcclogoUrl": fcclogo, "imgUrl": active04_16, "title": "麦尖天台open mic音乐会——你可以成为歌手","city": "杭州", "location": "杭州知味书屋", "date": "9-12", "startTime": "2017年10月7日 19:30", "endTime": "2017年10月7日 19:30", "auota": "200", "content": "", "love": 666, "person": 666, "enterState": 0},
+						{"id": 1, "fcclogoUrl": fcclogo, "imgUrl": active05_06, "title": "麦尖天台open mic音乐会——你可以成为歌手","city": "杭州", "location": "杭州知味书屋", "date": "9-12", "startTime": "2017年10月7日 19:30", "endTime": "2017年10月7日 19:30", "auota": "200", "content": "", "love": 666, "person": 666, "enterState": 0},
+						{"id": 2, "fcclogoUrl": fcclogo, "imgUrl": activity_img01, "title": "麦尖天台open mic音乐会——你可以成为歌手","city": "杭州", "location": "杭州知味书屋", "date": "9-12", "startTime": "2017年10月7日 19:30", "endTime": "2017年10月7日 19:30", "auota": "200", "content": "", "love": 666, "person": 666, "enterState": 1},
+						{"id": 3, "fcclogoUrl": fcclogo, "imgUrl": activity_img02, "title": "麦尖天台open mic音乐会——你可以成为歌手","city": "杭州", "location": "杭州知味书屋", "date": "9-12", "startTime": "2017年10月7日 19:30", "endTime": "2017年10月7日 19:30", "auota": "200", "content": "", "love": 666, "person": 666, "enterState": 1},
+						{"id": 4, "fcclogoUrl": fcclogo, "imgUrl": activity_img03, "title": "麦尖天台open mic音乐会——你可以成为歌手","city": "杭州", "location": "杭州知味书屋", "date": "9-12", "startTime": "2017年10月7日 19:30", "endTime": "2017年10月7日 19:30", "auota": "200", "content": "", "love": 666, "person": 666, "enterState": 1},
+						{"id": 5, "fcclogoUrl": fcclogo, "imgUrl": activity_img04, "title": "麦尖天台open mic音乐会——你可以成为歌手","city": "杭州", "location": "杭州知味书屋", "date": "9-12", "startTime": "2017年10月7日 19:30", "endTime": "2017年10月7日 19:30", "auota": "200", "content": "", "love": 666, "person": 666, "enterState": 1},
+						{"id": 6, "fcclogoUrl": fcclogo, "imgUrl": activity_img05, "title": "麦尖天台open mic音乐会——你可以成为歌手","city": "杭州", "location": "杭州知味书屋", "date": "9-12", "startTime": "2017年10月7日 19:30", "endTime": "2017年10月7日 19:30", "auota": "200", "content": "", "love": 666, "person": 666, "enterState": 1},
+						{"id": 7, "fcclogoUrl": fcclogo, "imgUrl": activity_img06, "title": "麦尖天台open mic音乐会——你可以成为歌手","city": "杭州", "location": "杭州知味书屋", "date": "9-12", "startTime": "2017年10月7日 19:30", "endTime": "2017年10月7日 19:30", "auota": "200", "content": "", "love": 666, "person": 666, "enterState": 1}
 					],
 				},
 				activitSite: {
 					title: '活动现场',
 					data: [
-						{ 'id': 1, imgUrl: require('../../assets/activity_img01.jpg'), "linkUrl": '' },
-						{ 'id': 2, imgUrl: require('../../assets/activity_img02.jpg'), "linkUrl": '' },
-						{ 'id': 3, imgUrl: require('../../assets/activity_img03.jpg'), "linkUrl": '' },
-						{ 'id': 4, imgUrl: require('../../assets/activity_img04.jpg'), "linkUrl": '' },
-						{ 'id': 5, imgUrl: require('../../assets/activity_img05.jpg'), "linkUrl": '' },
-						{ 'id': 6, imgUrl: require('../../assets/activity_img06.jpg'), "linkUrl": '' }
+						{"id": 0, "fcclogoUrl": fcclogo, "imgUrl": active04_16, "title": "麦尖天台open mic音乐会——你可以成为歌手","city": "杭州", "location": "杭州知味书屋", "date": "9-12", "startTime": "2017年10月7日 19:30", "endTime": "2017年10月7日 19:30", "auota": "200", "content": "", "love": 666, "person": 666, "enterState": 0},
+						{"id": 1, "fcclogoUrl": fcclogo, "imgUrl": active05_06, "title": "麦尖天台open mic音乐会——你可以成为歌手","city": "杭州", "location": "杭州知味书屋", "date": "9-12", "startTime": "2017年10月7日 19:30", "endTime": "2017年10月7日 19:30", "auota": "200", "content": "", "love": 666, "person": 666, "enterState": 0},
+						{"id": 2, "fcclogoUrl": fcclogo, "imgUrl": activity_img01, "title": "麦尖天台open mic音乐会——你可以成为歌手","city": "杭州", "location": "杭州知味书屋", "date": "9-12", "startTime": "2017年10月7日 19:30", "endTime": "2017年10月7日 19:30", "auota": "200", "content": "", "love": 666, "person": 666, "enterState": 1},
+						{"id": 3, "fcclogoUrl": fcclogo, "imgUrl": activity_img02, "title": "麦尖天台open mic音乐会——你可以成为歌手","city": "杭州", "location": "杭州知味书屋", "date": "9-12", "startTime": "2017年10月7日 19:30", "endTime": "2017年10月7日 19:30", "auota": "200", "content": "", "love": 666, "person": 666, "enterState": 1},
+						{"id": 4, "fcclogoUrl": fcclogo, "imgUrl": activity_img03, "title": "麦尖天台open mic音乐会——你可以成为歌手","city": "杭州", "location": "杭州知味书屋", "date": "9-12", "startTime": "2017年10月7日 19:30", "endTime": "2017年10月7日 19:30", "auota": "200", "content": "", "love": 666, "person": 666, "enterState": 1},
+						{"id": 5, "fcclogoUrl": fcclogo, "imgUrl": activity_img04, "title": "麦尖天台open mic音乐会——你可以成为歌手","city": "杭州", "location": "杭州知味书屋", "date": "9-12", "startTime": "2017年10月7日 19:30", "endTime": "2017年10月7日 19:30", "auota": "200", "content": "", "love": 666, "person": 666, "enterState": 1},
+						{"id": 6, "fcclogoUrl": fcclogo, "imgUrl": activity_img05, "title": "麦尖天台open mic音乐会——你可以成为歌手","city": "杭州", "location": "杭州知味书屋", "date": "9-12", "startTime": "2017年10月7日 19:30", "endTime": "2017年10月7日 19:30", "auota": "200", "content": "", "love": 666, "person": 666, "enterState": 1},
+						{"id": 7, "fcclogoUrl": fcclogo, "imgUrl": activity_img06, "title": "麦尖天台open mic音乐会——你可以成为歌手","city": "杭州", "location": "杭州知味书屋", "date": "9-12", "startTime": "2017年10月7日 19:30", "endTime": "2017年10月7日 19:30", "auota": "200", "content": "", "love": 666, "person": 666, "enterState": 1}
 					],
 				},
 				fccCityActivites: {
 					title: 'FCC城市社区活动',
 					data: [
-						{ 'id': 1, title:'麦尖天台open mic音乐会——你可以成为歌手', location: "FCC杭州社区", love: 666, person: 666, enterState: '0', date: '9-12', imgUrl: require('../../assets/activity_img01.jpg'), "linkUrl": '', fcclogoUrl: require('../../assets/android-chrome-192x192.png') },
-						{ 'id': 2, title:'麦尖天台open mic音乐会——你可以成为歌手', location: "FCC杭州社区", love: 666, person: 666, enterState: '0', date: '9-12', imgUrl: require('../../assets/activity_img01.jpg'), "linkUrl": '', fcclogoUrl: require('../../assets/android-chrome-192x192.png') },
-						{ 'id': 3, title:'麦尖天台open mic音乐会——你可以成为歌手', location: "FCC杭州社区", love: 666, person: 666, enterState: '0', date: '9-12', imgUrl: require('../../assets/activity_img01.jpg'), "linkUrl": '', fcclogoUrl: require('../../assets/android-chrome-192x192.png') },
-						{ 'id': 4, title:'麦尖天台open mic音乐会——你可以成为歌手', location: "FCC杭州社区", love: 666, person: 666, enterState: '0', date: '9-12', imgUrl: require('../../assets/activity_img01.jpg'), "linkUrl": '', fcclogoUrl: require('../../assets/android-chrome-192x192.png') },
-						{ 'id': 5, title:'麦尖天台open mic音乐会——你可以成为歌手', location: "FCC杭州社区", love: 666, person: 666, enterState: '0', date: '9-12', imgUrl: require('../../assets/activity_img01.jpg'), "linkUrl": '', fcclogoUrl: require('../../assets/android-chrome-192x192.png') },
-						{ 'id': 6, title:'麦尖天台open mic音乐会——你可以成为歌手', location: "FCC杭州社区", love: 666, person: 666, enterState: '0', date: '9-12', imgUrl: require('../../assets/activity_img01.jpg'), "linkUrl": '', fcclogoUrl: require('../../assets/android-chrome-192x192.png') },
-						{ 'id': 7, title:'麦尖天台open mic音乐会——你可以成为歌手', location: "FCC杭州社区", love: 666, person: 666, enterState: '0', date: '9-12', imgUrl: require('../../assets/activity_img01.jpg'), "linkUrl": '', fcclogoUrl: require('../../assets/android-chrome-192x192.png') },
-						{ 'id': 8, title:'麦尖天台open mic音乐会——你可以成为歌手', location: "FCC杭州社区", love: 666, person: 666, enterState: '0', date: '9-12', imgUrl: require('../../assets/activity_img01.jpg'), "linkUrl": '', fcclogoUrl: require('../../assets/android-chrome-192x192.png') },
-						{ 'id': 9, title:'麦尖天台open mic音乐会——你可以成为歌手', location: "FCC杭州社区", love: 666, person: 666, enterState: '0', date: '9-12', imgUrl: require('../../assets/activity_img01.jpg'), "linkUrl": '', fcclogoUrl: require('../../assets/android-chrome-192x192.png') },
-						{ 'id': 10, title:'麦尖天台open mic音乐会——你可以成为歌手', location: "FCC杭州社区", love: 666, person: 666, enterState: '0', date: '9-12', imgUrl: require('../../assets/activity_img01.jpg'), "linkUrl": '', fcclogoUrl: require('../../assets/android-chrome-192x192.png') },
+						{"id": 0, "fcclogoUrl": fcclogo, "imgUrl": active04_16, "title": "麦尖天台open mic音乐会——你可以成为歌手","city": "杭州", "location": "杭州知味书屋", "date": "9-12", "startTime": "2017年10月7日 19:30", "endTime": "2017年10月7日 19:30", "auota": "200", "content": "", "love": 666, "person": 666, "enterState": 0},
+						{"id": 1, "fcclogoUrl": fcclogo, "imgUrl": active05_06, "title": "麦尖天台open mic音乐会——你可以成为歌手","city": "杭州", "location": "杭州知味书屋", "date": "9-12", "startTime": "2017年10月7日 19:30", "endTime": "2017年10月7日 19:30", "auota": "200", "content": "", "love": 666, "person": 666, "enterState": 0},
+						{"id": 2, "fcclogoUrl": fcclogo, "imgUrl": activity_img01, "title": "麦尖天台open mic音乐会——你可以成为歌手","city": "杭州", "location": "杭州知味书屋", "date": "9-12", "startTime": "2017年10月7日 19:30", "endTime": "2017年10月7日 19:30", "auota": "200", "content": "", "love": 666, "person": 666, "enterState": 1},
+						{"id": 3, "fcclogoUrl": fcclogo, "imgUrl": activity_img02, "title": "麦尖天台open mic音乐会——你可以成为歌手","city": "杭州", "location": "杭州知味书屋", "date": "9-12", "startTime": "2017年10月7日 19:30", "endTime": "2017年10月7日 19:30", "auota": "200", "content": "", "love": 666, "person": 666, "enterState": 1},
+						{"id": 4, "fcclogoUrl": fcclogo, "imgUrl": activity_img03, "title": "麦尖天台open mic音乐会——你可以成为歌手","city": "杭州", "location": "杭州知味书屋", "date": "9-12", "startTime": "2017年10月7日 19:30", "endTime": "2017年10月7日 19:30", "auota": "200", "content": "", "love": 666, "person": 666, "enterState": 1},
+						{"id": 5, "fcclogoUrl": fcclogo, "imgUrl": activity_img04, "title": "麦尖天台open mic音乐会——你可以成为歌手","city": "杭州", "location": "杭州知味书屋", "date": "9-12", "startTime": "2017年10月7日 19:30", "endTime": "2017年10月7日 19:30", "auota": "200", "content": "", "love": 666, "person": 666, "enterState": 1},
+						{"id": 6, "fcclogoUrl": fcclogo, "imgUrl": activity_img05, "title": "麦尖天台open mic音乐会——你可以成为歌手","city": "杭州", "location": "杭州知味书屋", "date": "9-12", "startTime": "2017年10月7日 19:30", "endTime": "2017年10月7日 19:30", "auota": "200", "content": "", "love": 666, "person": 666, "enterState": 1},
+						{"id": 7, "fcclogoUrl": fcclogo, "imgUrl": activity_img06, "title": "麦尖天台open mic音乐会——你可以成为歌手","city": "杭州", "location": "杭州知味书屋", "date": "9-12", "startTime": "2017年10月7日 19:30", "endTime": "2017年10月7日 19:30", "auota": "200", "content": "", "love": 666, "person": 666, "enterState": 1}
 					],
 				}
 			},
@@ -138,8 +155,10 @@ export default {
 
 	},
 	methods: {
-
-	}
+        toActiveDetils(id) {
+            this.$router.push({ name: "activedetils", params: { id } });
+        }
+    }
 }
 </script>
 <style lang="sass" scoped>

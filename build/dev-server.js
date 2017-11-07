@@ -98,6 +98,7 @@ app.use(staticPath, express.static('./static'))
 
 // 访问链接
 var uri = 'http://localhost:' + port
+// var uri = 'http://192.168.1.104:' + port
 
 // 创建promise，在应用服务启动之后resolve
 // 便于外部文件require了这个dev-server之后的代码编写

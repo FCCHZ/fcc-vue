@@ -1,0 +1,8 @@
+{
+    "activedetils":{
+        "1":{"id": 1, "fcclogoUrl": "", "imgUrl": "", "title": "","city": "", "location": "", "startTime": "2017年10月7日 19:30", "endTime": "2017年10月7日 19:30", "auota": "200", "content": "", "love": 666, "person": 666, "enterState": 0}
+    },
+    "activity": [
+        {"id": 1, "fcclogoUrl": "", "imgUrl": "", "title": "","city": "", "location": "", "startTime": "2017年10月7日 19:30", "endTime": "2017年10月7日 19:30", "auota": "200", "content": "", "love": 666, "person": 666, "enterState": 0}
+    ]
+}

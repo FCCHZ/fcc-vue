@@ -28,7 +28,7 @@ export default new Router({
     	component: ActiveCenter
     },
     {
-    	path: '/activedetils', 
+    	path: '/activedetils/:id', 
     	name: 'activedetils',
     	component: ActiveDetils
     },
