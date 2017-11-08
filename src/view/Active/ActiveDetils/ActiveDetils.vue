@@ -25,7 +25,6 @@
               </div>
           </div>
       </div>
-
       <div class="content">
           <div class="left">
             <span class="title">活动票种...</span>
@@ -76,14 +75,16 @@
                   </div>
               </div>
               <div class="calendar">
-                <vue-event-calendar class="xxx" :events="demoEvents"></vue-event-calendar>
+                <vue-event-calendar :events="demoEvents"></vue-event-calendar>
               </div>
           </div>
       </div>
+      <fcc-footer-one></fcc-footer-one>
     </div>
 </template>
 <script>
 import VueQArt from 'vue-qart'
+import FccFooterOne from 'components/FCC_footer_one'
 import fcclogo from "assets/android-chrome-192x192.png"
 import active04_16 from "assets/active04_16.jpg"
 import active05_06 from "assets/active05_06.jpg"
@@ -132,7 +133,8 @@ export default {
     };
   },
   components: {
-      VueQArt
+      VueQArt,
+      FccFooterOne
   },
   created() {},
   mounted() {
@@ -199,8 +201,8 @@ $horizotal-height: 280px
     font-style: normal
     margin-right: 5px
 .active-detils
-    width: 1080px
-    margin: 30px auto
+    width: 100%
+    margin: 0 auto
     .item-horizontal
         background: #FFFFFF;
         width: 1080px
@@ -208,6 +210,7 @@ $horizotal-height: 280px
         display: flex
         position: relative
         margin-bottom: 33px
+        margin: 30px auto
         .horizotal-img
             width: 520px
             height: $horizotal-height

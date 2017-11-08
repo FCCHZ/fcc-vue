@@ -31,10 +31,12 @@
         <div class="content">
             <activites-list-template :activites="activites.fccCityActivites.data" ref="activitesList"></activites-list-template>
         </div>
+        <fcc-footer-two></fcc-footer-two>
     </div>
 </template>
 <script>
 import ActivitesListTemplate from 'components/ActiveAbstract/ActivitesListTemplate'
+import FccFooterTwo from 'components/FCC_footer_two'
 
 export default {
     data() {
@@ -94,7 +96,8 @@ export default {
         }
     },
     components: {
-        ActivitesListTemplate
+        ActivitesListTemplate,
+        FccFooterTwo
     },
     mounted() {
 
@@ -199,6 +202,7 @@ $margin-auto: 0 auto
 .content
     width: $width
     margin: $margin-auto
+    height: 100%
     margin-top: 30px
     
 </style>

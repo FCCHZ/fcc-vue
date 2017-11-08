@@ -108,7 +108,7 @@ $horizotal-height: 243px
     font-style: normal
 .activites-list
     width: 1080px
-    height: $height
+    // height: $height
     display: flex
     flex-wrap: wrap
 

@@ -32,13 +32,14 @@
 			</div>
 			<activites-list-template :activites="activites.fccCityActivites.data.slice(0, 4)"></activites-list-template>
 		</div>
+		<fcc-footer-two></fcc-footer-two>
 	</div>
 </template>
 <script>
 import ActivitesSwiperTemplate from 'components/ActiveAbstract/ActivitesSwiperTemplate'
 import ActivitesListTemplate from 'components/ActiveAbstract/ActivitesListTemplate'
 import ActivitySiteSwiper from 'components/ActiveAbstract/swiper'
-import 
+import FccFooterTwo from 'components/FCC_footer_two'
 import { swiper, swiperSlide } from 'vue-awesome-swiper'
 import fcclogo from "assets/android-chrome-192x192.png"
 import active04_16 from "assets/active04_16.jpg"
@@ -150,7 +151,8 @@ export default {
 		swiper,
 		swiperSlide,
 		ActivitySiteSwiper,
-		ActivitesListTemplate
+		ActivitesListTemplate,
+		FccFooterTwo
 	},
 	mounted() {
 
