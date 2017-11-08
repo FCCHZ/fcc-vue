@@ -118,8 +118,14 @@ $horizotal-height: 243px
         border: 1px solid #EEEEEE
         margin-right: 17px
         margin-bottom: 30px
-        &:hover
+        transition: transform .5s
+        transition: box-shadow .5s
+        &:hover,&:focus
             cursor: pointer
+            transform: scale3d(1.006, 1.006, 1)
+            box-shadow: 0 8px 17px 0 rgba(0, 0, 0, .2), 0 6px 20px 0 rgba(0, 0, 0, .15)
+            &::after
+                opacity: 1
         &:nth-child(4n)
             margin-right: 0
         .img
@@ -203,6 +209,14 @@ $horizotal-height: 243px
     display: flex
     position: relative
     margin-bottom: 33px
+    transition: transform .5s
+        transition: box-shadow .5s
+    &:hover,&:focus
+        cursor: pointer
+        transform: scale3d(1.006, 1.006, 1)
+        box-shadow: 0 8px 17px 0 rgba(0, 0, 0, .2), 0 6px 20px 0 rgba(0, 0, 0, .15)
+        &::after
+            opacity: 1
     .horizotal-img
         width: 365px
         height: $horizotal-height
