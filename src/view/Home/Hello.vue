@@ -3,7 +3,7 @@
     
     <vue-banner></vue-banner>
     <div><i class="fcc-home"></i>{{msg}}</div>
-    
+    <vue-Footer></vue-Footer>
     <!-- <div class="imgg" v-for="str in listImg" :style="{ backgroundImage:'url('+ str.url+')'}"></div> -->
   </div>
 </template>
@@ -13,6 +13,8 @@
 import banner1 from '../../assets/banner1.jpg'
 import banner2 from '../../assets/banner2.jpg'
 import banner from '../../components/swiper'
+import fccFooter from '@/components/FCC_footer_one'
+
 export default {
   name: 'hello',
   data () {
@@ -29,7 +31,8 @@ export default {
 
   },
   components:{
-    "vue-banner": banner
+    "vue-banner": banner,
+    "vue-Footer":fccFooter
   }
   
 }
