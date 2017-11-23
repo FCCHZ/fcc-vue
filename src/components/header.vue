@@ -29,6 +29,14 @@
 #header {
 	height: 50px;
 	width: 100%;
+	position:fixed; 
+	top:0; 
+	left: 0;
+	background-color: #FFF;
+	z-index: 99;
+	    -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    -moz-box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 #header #header-img {
 	float: left;
