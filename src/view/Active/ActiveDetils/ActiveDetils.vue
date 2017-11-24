@@ -46,7 +46,7 @@
             <div class="introduce">
                 <p>似的发射点发射点发射点</p>
             </div>
-            <div class="share">
+            <!-- <div class="share">
                 <span>分享到微信</span>
             </div>
             <span class="title">您有任何问题，在这里提问！</span>
@@ -58,7 +58,7 @@
             </span>
             <div class="comment-list">
                 <span>还木有人评论，赶快来抢个沙发！</span>
-            </div>
+            </div> -->
           </div>
           <div class="right">
               <span class="map-title">活动地点<span class="bmap" v-on:click="clickToBMap()">(查看全屏)</span></span>
@@ -67,8 +67,8 @@
               </div>
               <!-- 二维码 -->
               <div class="ercode">
-                  <div>
-                      
+                  <div class="share-ercode">
+                      分享活动到微信朋友圈
                   </div>
                   <div>
                       <vue-q-art class="vue-q-art" :config="config" :downloadButton="downloadButton"></vue-q-art>
@@ -345,11 +345,14 @@ $horizotal-height: 280px
                 width: 280px
                 height: 195px
                 display: flex
-                margin-top: 23px
+                margin-top: 13px
                 div
                     flex: 1
                     .vue-q-art
                         margin-right: -10px
+                .share-ercode
+                    height: 175px;
+                    margin-top: 10px;
             .calendar
                 width: 280px
                 height: 270px
