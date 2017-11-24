@@ -2,7 +2,7 @@
   <div id="app">
       <vue-header></vue-header>
       <transition name="fade">
-        <router-view></router-view>
+        <router-view class="content"></router-view>
       </transition>
   </div>
 </template>
@@ -43,6 +43,9 @@ export default {
 .fade-enter,
 .fade-leave-to {
   opacity: 0;
+}
+.content {
+  margin-top: 50px;
 }
 ul,li {
   list-style-type: none;

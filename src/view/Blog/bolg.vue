@@ -132,12 +132,23 @@
 			toggleShade (type) {
 				this.index = type;
 	  		},
+			// search() {
+			// 	this.banners = window.banners.filter((v, i) => {
+			// 	 	return v.name.indexOf(this.searchValue) !== -1
+			// 	})	
+			// }
 			search() {
-				this.banners = window.banners.filter((v, i) => {
-					return v.name.indexOf(this.searchValue) !== -1
-				})
-				
-			}
+    			this.banners = window.banners.filter((v, i) => {
+       			/* 检索博主姓名 */
+            		let isName = v.name.indexOf(this.searchValue) !== -1
+        		/* 检索技能名称 */
+            		let skill = v.skillList.filter(v => {
+                		return v.name.indexOf(this.searchValue) !== -1
+            })
+            let isSkill = skill.length >= 1
+        return isName || isSkill
+    })
+}
 		},
 		
 		components:{
