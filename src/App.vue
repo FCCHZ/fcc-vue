@@ -13,6 +13,7 @@ import FCCIcon from './assets/FCC-fontIcon/css/fccHangzhou.css'
 import header from "@/components/header"
 
 export default {
+  
   name: "app",
   data() {
     return {};

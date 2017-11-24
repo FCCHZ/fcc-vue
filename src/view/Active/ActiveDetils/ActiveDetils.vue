@@ -2,30 +2,29 @@
     <div  class="active-detils">
         <div class="item-horizontal">
           <div class="horizotal-img">
-              <img v-bind:src="detils.imgUrl" alt="">
+              <img v-bind:src="activesItem.imgUrl" alt="">
           </div>
           <div class="horizotal-dsc">
               <div class="horizotal-title">
-                  <span class="title-span" v-html="">哈哈哈</span>
+                  <span class="title-span" v-html="activesItem.title">哈哈哈</span>
               </div>
               <div class="horizotal-date">
-                  <span><i class="fcc-clock fcc-icon">{{ detils.date }}</i></span>
+                  <span><i class="fcc-clock fcc-icon">{{ activesItem.startTime }}~{{ activesItem.endTime }}</i></span>
               </div>
               <div class="horizotal-location">
-                  <span><i class="fcc-地址 fcc-icon" v-html="detils.location"></i></span>
+                  <span><i class="fcc-地址 fcc-icon" v-html="activesItem.location"></i></span>
               </div>
               <div class="horizotal-limit">
-                  <span><i class="fcc-users fcc-icon"></i>限额{{}}人</span>
+                  <span><i class="fcc-users fcc-icon"></i>限额{{activesItem.auota}}人</span>
               </div>
               <div class="horizotal-count">
-                  <span>{{}}人浏览</span>
+                  <span>{{activesItem.watch}}人浏览</span>
               </div>
               <div class="enter">
                   <span>我要报名</span>
               </div>
           </div>
       </div>
-
       <div class="content">
           <div class="left">
             <span class="title">活动票种...</span>
@@ -33,7 +32,7 @@
                 <div class="ticket">
                     <span>免费票<i class="fcc-ok icon"></i></span>
                 </div>
-                <div class="ticket">
+                <!-- <div class="ticket">
                     <span>免费票<i class="fcc-ok icon"></i></span>
                 </div>
                 <div class="ticket">
@@ -41,13 +40,13 @@
                 </div>
                 <div class="ticket">
                     <span>免费票<i class="fcc-ok icon"></i></span>
-                </div>
+                </div> -->
             </div>
             <span class="title">活动内容...</span>
             <div class="introduce">
                 <p>似的发射点发射点发射点</p>
             </div>
-            <div class="share">
+            <!-- <div class="share">
                 <span>分享到微信</span>
             </div>
             <span class="title">您有任何问题，在这里提问！</span>
@@ -59,7 +58,7 @@
             </span>
             <div class="comment-list">
                 <span>还木有人评论，赶快来抢个沙发！</span>
-            </div>
+            </div> -->
           </div>
           <div class="right">
               <span class="map-title">活动地点<span class="bmap" v-on:click="clickToBMap()">(查看全屏)</span></span>
@@ -68,72 +67,131 @@
               </div>
               <!-- 二维码 -->
               <div class="ercode">
-                  <div></div>
+                  <div class="share-ercode">
+                      分享活动到微信朋友圈
+                  </div>
                   <div>
                       <vue-q-art class="vue-q-art" :config="config" :downloadButton="downloadButton"></vue-q-art>
                   </div>
               </div>
+              <div class="calendar">
+                <vue-event-calendar :events="demoEvents"></vue-event-calendar>
+              </div>
           </div>
       </div>
+      <fcc-footer-one></fcc-footer-one>
     </div>
 </template>
 <script>
 import VueQArt from 'vue-qart'
+import FccFooterOne from 'components/FCC_footer_one'
+import fcclogo from "assets/android-chrome-192x192.png"
+import active04_16 from "assets/active04_16.jpg"
+import active05_06 from "assets/active05_06.jpg"
+import activity_img01 from "assets/activity_img01.jpg"
+import activity_img02 from "assets/activity_img02.jpg"
+import activity_img03 from "assets/activity_img03.jpg"
+import activity_img04 from "assets/activity_img04.jpg"
+import activity_img05 from "assets/activity_img05.jpg"
+import activity_img06 from "assets/activity_img06.jpg"
 
 export default {
   data() {
     return {
-      detils: {},
+      detils: '',
       lat: 0,
       lng: 0,
-      location: '杭州市滨江区联庄一区119',
+      location: '',
       config: {
             value: 'https://www.baidu.com',
             imagePath: require('../../../assets/android-chrome-192x192.png'),
             filter: 'color',
             size: 140
         },
-      downloadButton: false
+      downloadButton: false,
+      demoEvents: [{
+        date: '2016/9/12', // 必填
+        title: 'Foo' // 必填
+      }, 
+      {
+        date: '2016/12/15',
+        title: 'Bar',
+        desc: 'description',
+        customClass: 'disabled highlight' // 自定义日历单元格的Class，会加到对应的日历单元格上
+      }],
+      activesItem:{},
+      activesDetils: [
+            {"id": 0, "fcclogoUrl": fcclogo, "imgUrl": active04_16, "title": "麦尖天台open mic音乐会——你可以成为歌手","city": "杭州", "location": "杭州三维大厦", "data": "9-12", "startTime": "2017年10月7日 19:30", "endTime": "2017年10月7日 19:30", "auota": "200", "content": "", "love": 666, "person": 666, "enterState": 0, "watch": 666},
+            {"id": 1, "fcclogoUrl": fcclogo, "imgUrl": active05_06, "title": "麦尖天台open mic音乐会——你可以成为歌手","city": "杭州", "location": "杭州知味书屋", "data": "9-12", "startTime": "2017年10月7日 19:30", "endTime": "2017年10月7日 19:30", "auota": "200", "content": "", "love": 666, "person": 666, "enterState": 0, "watch": 666},
+            {"id": 2, "fcclogoUrl": fcclogo, "imgUrl": activity_img01, "title": "麦尖天台open mic音乐会——你可以成为歌手","city": "杭州", "location": "杭州知味书屋", "data": "9-12", "startTime": "2017年10月7日 19:30", "endTime": "2017年10月7日 19:30", "auota": "200", "content": "", "love": 666, "person": 666, "enterState": 1, "watch": 666},
+            {"id": 3, "fcclogoUrl": fcclogo, "imgUrl": activity_img02, "title": "麦尖天台open mic音乐会——你可以成为歌手","city": "杭州", "location": "杭州知味书屋", "data": "9-12", "startTime": "2017年10月7日 19:30", "endTime": "2017年10月7日 19:30", "auota": "200", "content": "", "love": 666, "person": 666, "enterState": 1, "watch": 666},
+            {"id": 4, "fcclogoUrl": fcclogo, "imgUrl": activity_img03, "title": "麦尖天台open mic音乐会——你可以成为歌手","city": "杭州", "location": "杭州知味书屋", "data": "9-12", "startTime": "2017年10月7日 19:30", "endTime": "2017年10月7日 19:30", "auota": "200", "content": "", "love": 666, "person": 666, "enterState": 1, "watch": 666},
+            {"id": 5, "fcclogoUrl": fcclogo, "imgUrl": activity_img04, "title": "麦尖天台open mic音乐会——你可以成为歌手","city": "杭州", "location": "杭州知味书屋", "data": "9-12", "startTime": "2017年10月7日 19:30", "endTime": "2017年10月7日 19:30", "auota": "200", "content": "", "love": 666, "person": 666, "enterState": 1, "watch": 666},
+            {"id": 6, "fcclogoUrl": fcclogo, "imgUrl": activity_img05, "title": "麦尖天台open mic音乐会——你可以成为歌手","city": "杭州", "location": "杭州知味书屋", "data": "9-12", "startTime": "2017年10月7日 19:30", "endTime": "2017年10月7日 19:30", "auota": "200", "content": "", "love": 666, "person": 666, "enterState": 1, "watch": 666},
+            {"id": 7, "fcclogoUrl": fcclogo, "imgUrl": activity_img06, "title": "麦尖天台open mic音乐会——你可以成为歌手","city": "杭州", "location": "杭州知味书屋", "data": "9-12", "startTime": "2017年10月7日 19:30", "endTime": "2017年10月7日 19:30", "auota": "200", "content": "", "love": 666, "person": 666, "enterState": 1, "watch": 666}
+        ],
     };
   },
   components: {
-      VueQArt
+      VueQArt,
+      FccFooterOne
   },
   created() {},
   mounted() {
-    this._initData();
-    this._initBMap();
+    this._initData()
+    this._initErcode()
   },
   methods: {
     _initData() {
-      // this.detils = this.$router.params
-      // console.log(this.$router.params)
+        if(this.detils === ''){
+            this.detils = this.$route.params.id
+            for(var i in this.activesDetils) {
+                if(this.activesDetils[i].id == this.detils) {
+                    this.activesItem = this.activesDetils[i]
+                    this._initBMap(this.activesItem)
+                    this._initCalendar(this.activesItem.data)
+                    break
+                }else {
+                    continue
+                }
+            }
+        }
     },
-    _initBMap() {
+    _initBMap(data) {
       var map = new BMap.Map("container");
-    //   map.centerAndZoom(new BMap.Point(116.404, 39.915), 11);
+      // map.centerAndZoom(new BMap.Point(116.404, 39.915), 11);
       // 创建地址解析器实例
       var myGeo = new BMap.Geocoder();
       // 将地址解析结果显示在地图上，并调整地图视野
       myGeo.getPoint(
-        this.location,
+        data.location,
         point => {
           if (point) {
             map.centerAndZoom(point, 16)
             map.addOverlay(new BMap.Marker(point))
             this.lat = point.lat
             this.lng = point.lng
+            this.location = data.location
           }
         },
       );
     },
     clickToBMap() {
         window.open('http://api.map.baidu.com/marker?location=' + this.lat + ',' + this.lng + '&title=FCC活动地点&content=' + this.location + '&output=html')
+    },
+    _initCalendar(data) {
+        var date = new Date()
+        var year = date.getFullYear()
+        this.demoEvents[0].date = year + '/' + (data.split('-')).join('/')
+        this.$EventCalendar.toDate(this.demoEvents[0].date)
+    },
+    _initErcode() {
+        this.config.value = window.location.href
     }
    }
 };
 </script>
-<style lang="sass">
+<style lang="sass" scoped>
 $height: 354px
 $fcc-logo-height: 27px
 $item-width: 255px
@@ -143,8 +201,8 @@ $horizotal-height: 280px
     font-style: normal
     margin-right: 5px
 .active-detils
-    width: 1080px
-    margin: 30px auto
+    width: 100%
+    margin: 0 auto
     .item-horizontal
         background: #FFFFFF;
         width: 1080px
@@ -152,6 +210,7 @@ $horizotal-height: 280px
         display: flex
         position: relative
         margin-bottom: 33px
+        margin: 30px auto
         .horizotal-img
             width: 520px
             height: $horizotal-height
@@ -284,14 +343,18 @@ $horizotal-height: 280px
                 margin-top: 10px
             .ercode
                 width: 280px
-                height: 141px
+                height: 195px
                 display: flex
+                margin-top: 13px
                 div
                     flex: 1
                     .vue-q-art
-                        canvas
-                            width: 140px
-                            height: 140px
-                    
-
+                        margin-right: -10px
+                .share-ercode
+                    height: 175px;
+                    margin-top: 10px;
+            .calendar
+                width: 280px
+                height: 270px
+                margin-top: 20px
 </style>

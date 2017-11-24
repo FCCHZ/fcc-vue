@@ -10,13 +10,11 @@
     "build": "node build/build.js"
   },
   "dependencies": {
-<<<<<<< HEAD
+    "element-ui": "^2.0.4",
     "qartjs": "^1.1.2",
-=======
-    "element-ui": "^2.0.1",
->>>>>>> 2061ff9eabe9d9ac8a4f83187a6618508a2b2a2f
     "vue": "^2.4.2",
     "vue-awesome-swiper": "^2.5.4",
+    "vue-event-calendar": "^1.5.1",
     "vue-qart": "^2.1.0",
     "vue-router": "^2.7.0",
     "vuex": "^3.0.0"

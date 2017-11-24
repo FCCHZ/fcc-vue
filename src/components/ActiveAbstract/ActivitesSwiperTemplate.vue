@@ -5,13 +5,13 @@
             <router-link to="/activecenter" tag="span" class="more">更多>></router-link>
         </div>
         <div class="content">
-            <swiper :swiperOption="swiperOption" :activites="activites">
+            <swiper class="swiper" :swiperOption="swiperOption" :activites="activites">
             </swiper>
         </div>
     </div>
 </template>
 <script>
-import Swiper from 'view/Active/ActiveAbstract/swiper'
+import Swiper from 'components/ActiveAbstract/swiper'
 
 export default {
     props: {
@@ -26,6 +26,11 @@ export default {
     },
     components: {
         Swiper
+    },
+    methods: {
+        toActiveDetils(id) {
+            this.$router.push({ name: "activedetils", params: { id } });
+        }
     }
 }
 </script>
@@ -63,7 +68,7 @@ $more-font-family: PingFangSC-Light
       .content
         margin-top: 24px
         height: $height
-        
-
-  
+        .swiper
+            width: 1080px
+            height: $height
 </style>

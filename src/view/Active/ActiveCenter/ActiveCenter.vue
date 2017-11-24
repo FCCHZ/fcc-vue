@@ -29,12 +29,14 @@
             </div>
         </div>
         <div class="content">
-            <activites-list-template :activites="activites.fccCityActivites.data" ref="activitesList"></activites-list-template>
+            <activites-list-template :activites="listData" ref="activitesList"></activites-list-template>
         </div>
+        <fcc-footer-two></fcc-footer-two>
     </div>
 </template>
 <script>
-import ActivitesListTemplate from 'view/Active/ActiveAbstract/ActivitesListTemplate'
+import ActivitesListTemplate from 'components/ActiveAbstract/ActivitesListTemplate'
+import FccFooterTwo from 'components/FCC_footer_two'
 
 export default {
     data() {
@@ -43,8 +45,10 @@ export default {
             cityState: '全部',
             sortState: '综合排序',
             sortTypeState: 0,
-            time:['全部', '今天', '明天', '本周', '本月', '指定日期'],
+            time:['全部', '今天', '明天', '本周', '本月'],
+            // time:['全部', '今天', '明天', '本周', '本月', '指定日期'],
             cities: ['全部', '北京', '上海', '广州', '深圳', '杭州', '成都', '西安', '郑州'],
+            listData:[],
             activites: {
 				recentActivites: {
 					title: '近期活动',
@@ -91,24 +95,88 @@ export default {
 					],
 				}
 			},
+            beijing:[
+                { 'id': 1, title:'麦尖天台open mic音乐会——你可以成为歌手', location: "FCC杭州社区", love: 666, person: 666, enterState: '0', date: '9-12', imgUrl: require('../../../assets/activity_img01.jpg'), "linkUrl": '', fcclogoUrl: require('../../../assets/android-chrome-192x192.png') },
+				{ 'id': 2, title:'麦尖天台open mic音乐会——你可以成为歌手', location: "FCC杭州社区", love: 666, person: 666, enterState: '0', date: '9-12', imgUrl: require('../../../assets/activity_img01.jpg'), "linkUrl": '', fcclogoUrl: require('../../../assets/android-chrome-192x192.png') },
+            ],
+            shanghai:[],
+            guangzhou:[],
+            shenzheng:[],
+            hangzhou:[],
+            chengdu:[],
+            xian:[],
+            zhengzhou:[],
+            newest:[]
         }
     },
     components: {
-        ActivitesListTemplate
+        ActivitesListTemplate,
+        FccFooterTwo
     },
     mounted() {
-
+        this.init()
     },
     methods: {
+        init(){
+            this.listData = this.activites.fccCityActivites.data
+        },
         changeItemState(state, item) {
             if(state == 'timeState') {
                 this.timeState = item
+                switch (item) {
+                    case '今天':
+                        this.listData = this.tody
+                        break;
+                    case '明天':
+                        this.listData = this.tomorrow
+                        break;
+                    case '本周':
+                        this.listData = this.week
+                        break;
+                    case '本月':
+                        this.listData = this.month
+                        break;
+                    default:
+                        this.listData = this.activites.fccCityActivites.data
+                        break;
+                }
             }else if (state == 'cityState') {
                 this.cityState = item
+                switch (item) {
+                    case '北京':
+                        this.listData = this.beijing
+                        break;
+                    case '上海':
+                        this.listData = this.shanghai
+                        break;
+                    case '广州':
+                        this.listData = this.guangzhou
+                        break;
+                    case '深圳':
+                        this.listData = this.shenzheng
+                        break;
+                    case '杭州':
+                        this.listData = this.hangzhou
+                        break;
+                    case '成都':
+                        this.listData = this.chendu
+                        break;
+                    case '西安':
+                        this.listData = this.xian
+                        break;
+                    case '郑州':
+                        this.listData = this.zhengzhou
+                        break;
+                    default:
+                        this.listData = this.activites.fccCityActivites.data
+                        break;
+                }
             }else if (state == '综合排序') {
                 this.sortState = item
+                this.listData = this.activites.fccCityActivites.data
             }else if (state == '最新发布') {
                 this.sortState = item
+                this.listData = this.newest
             }
         },
         changeSortTypeState(state) {
@@ -199,6 +267,7 @@ $margin-auto: 0 auto
 .content
     width: $width
     margin: $margin-auto
+    height: 100%
     margin-top: 30px
     
 </style>
