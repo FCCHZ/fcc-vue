@@ -118,8 +118,8 @@ $horizotal-height: 243px
         border: 1px solid #EEEEEE
         margin-right: 17px
         margin-bottom: 30px
-        transition: transform .5s
-        transition: box-shadow .5s
+        transition: transform .5s linear
+        transition: box-shadow .5s linear
         &:hover,&:focus
             cursor: pointer
             transform: scale3d(1.006, 1.006, 1)
@@ -209,8 +209,8 @@ $horizotal-height: 243px
     display: flex
     position: relative
     margin-bottom: 33px
-    transition: transform .5s
-        transition: box-shadow .5s
+    transition: transform .5s linear
+    transition: box-shadow .5s linear
     &:hover,&:focus
         cursor: pointer
         transform: scale3d(1.006, 1.006, 1)

@@ -68,7 +68,11 @@
               <!-- 二维码 -->
               <div class="ercode">
                   <div class="share-ercode">
-                      分享活动到微信朋友圈
+                    <p>扫</p>
+                    <p>一</p>
+                    <p>扫</p>
+                    <p>分</p>
+                    <p>享</p>
                   </div>
                   <div>
                       <vue-q-art class="vue-q-art" :config="config" :downloadButton="downloadButton"></vue-q-art>
@@ -202,7 +206,7 @@ $horizotal-height: 280px
     margin-right: 5px
 .active-detils
     width: 100%
-    margin: 0 auto
+    margin: 90px auto
     .item-horizontal
         background: #FFFFFF;
         width: 1080px
@@ -351,8 +355,14 @@ $horizotal-height: 280px
                     .vue-q-art
                         margin-right: -10px
                 .share-ercode
-                    height: 175px;
-                    margin-top: 10px;
+                    height: 175px
+                    margin-top: 10px
+                    padding-left: 40px
+                    padding-top: 10px
+                    p
+                        font-size: 22px;
+                        font-family: PingFangSC-Medium
+                        color: #555555
             .calendar
                 width: 280px
                 height: 270px

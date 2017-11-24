@@ -174,9 +174,13 @@ export default {
             }else if (state == '综合排序') {
                 this.sortState = item
                 this.listData = this.activites.fccCityActivites.data
+                this.timeState = '全部'
+                this.cityState = '全部'
             }else if (state == '最新发布') {
                 this.sortState = item
                 this.listData = this.newest
+                this.timeState = '全部'
+                this.cityState = '全部'
             }
         },
         changeSortTypeState(state) {
@@ -190,84 +194,86 @@ export default {
 <style lang="sass" scoped>
 $width: 1080px
 $margin-auto: 0 auto
-.label
-    width: $width
-    height: 132px
-    margin: $margin-auto
-    display: flex
-    flex-direction: column
-    border: 1px solid #EEEEEE;
-    .type
+.active-center
+    .label
+        margin-top: 90px!important
         width: $width
-        flex: 1
-        .items
-            display: flex
-            margin-left: 26px
-            .item-type
-                margin-right: 30px
-                margin-top: 16px
-                line-height: 30px
-                font-family: PingFangSC-Light;
-                font-size: 14px;
-                color: #A3A3A3;
-            .item
-                margin-right: 30px
-                margin-top: 16px
-                line-height: 30px
-                ont-family: PingFangSC-Light
-                font-size: 14px
-                color: #555555
-                &:hover
-                    cursor: pointer
+        height: 132px
+        margin: $margin-auto
+        display: flex
+        flex-direction: column
+        border: 1px solid #EEEEEE;
+        .type
+            width: $width
+            flex: 1
+            .items
+                display: flex
+                margin-left: 26px
+                .item-type
+                    margin-right: 30px
+                    margin-top: 16px
+                    line-height: 30px
+                    font-family: PingFangSC-Light;
+                    font-size: 14px;
+                    color: #A3A3A3;
+                .item
+                    margin-right: 30px
+                    margin-top: 16px
+                    line-height: 30px
+                    ont-family: PingFangSC-Light
+                    font-size: 14px
+                    color: #555555
+                    &:hover
+                        cursor: pointer
+                        border-bottom: 1px solid #FF9900
+                        color: #FF9900
+                .itemactive
                     border-bottom: 1px solid #FF9900
                     color: #FF9900
-            .itemactive
-                border-bottom: 1px solid #FF9900
-                color: #FF9900
-.sort
-    width: $width
-    height: 66px
-    border: 1px solid #EEEEEE
-    margin: $margin-auto
-    margin-top: 24px
-    display: flex
-    .sort-item
-        flex: 1
+    .sort
+        width: $width
         height: 66px
-        .sort-ul
-            display: flex
-            line-height: 66px
-            text-align: right
-            .common
-                margin-right: 30px
-                margin-top: 16px
-                line-height: 30px
-                font-family: PingFangSC-Light
-                font-size: 14px
-                &:hover
-                    cursor: pointer
-            .comprehensive
-                margin-left: 40px
-            .sortactive
-                border-bottom: 1px solid #FF9900
-                color: #FF9900
-        .sort-type
-            display: flex
-            line-height: 66px
-            margin-left: 450px
-            .sort-type-li
-                font-size: 24px
-                float: right
-                color: #D8D8D8
-                &:hover
-                    cursor: pointer
-            .active
-                color: #FF9900
-                
-.content
-    width: $width
-    margin: $margin-auto
-    height: 100%
-    margin-top: 30px
+        border: 1px solid #EEEEEE
+        margin: $margin-auto
+        margin-top: 24px
+        display: flex
+        .sort-item
+            flex: 1
+            height: 66px
+            .sort-ul
+                display: flex
+                line-height: 66px
+                text-align: right
+                .common
+                    margin-right: 30px
+                    margin-top: 16px
+                    line-height: 30px
+                    font-family: PingFangSC-Light
+                    font-size: 14px
+                    &:hover
+                        cursor: pointer
+                .comprehensive
+                    margin-left: 40px
+                .sortactive
+                    border-bottom: 1px solid #FF9900
+                    color: #FF9900
+            .sort-type
+                display: flex
+                line-height: 66px
+                margin-left: 450px
+                .sort-type-li
+                    font-size: 24px
+                    float: right
+                    color: #D8D8D8
+                    &:hover
+                        cursor: pointer
+                .active
+                    color: #FF9900
+                    
+    .content
+        width: $width
+        margin: $margin-auto
+        height: 100%
+        margin-top: 30px
     
 </style>

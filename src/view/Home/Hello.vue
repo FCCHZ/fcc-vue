@@ -13,7 +13,7 @@
       </div>
       <div class="content">
         <el-row :gutter="20">
-          <el-col :span="6" v-for="(item, i) in banners" >
+          <el-col :span="6" v-for="(item, i) in banners" v-bind:key="item.index">
             <div class="grid_content" @click='goBlog(item.url)' :class="{mouse_move: i===index}" @mouseenter.prevent="toggleShade(i)" 
         @mouseleave.prevent="toggleShade(-1)">
                  <div class="grid_content_img">
@@ -42,9 +42,9 @@
 <script>
 import banner from '../../components/swiper'
 import fccFooter from '@/components/FCC_footer_one'
-import HomeSwiperTemplate from '../Active/ActiveAbstract/ActivitesSwiperTemplate'
+import HomeSwiperTemplate from 'components/ActiveAbstract/ActivitesSwiperTemplate'
 import { swiper, swiperSlide } from 'vue-awesome-swiper'
-import Swiper from 'view/Active/ActiveAbstract/swiper'
+import Swiper from 'components/ActiveAbstract/swiper'
 
 
 export default {
