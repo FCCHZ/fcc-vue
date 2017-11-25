@@ -29,7 +29,7 @@
             </div>
         </div>
         <div class="content">
-            <activites-list-template :activites="listData" ref="activitesList"></activites-list-template>
+            <activites-list-template :state="enterState" :activites="listData" ref="activitesList"></activites-list-template>
         </div>
         <fcc-footer-two></fcc-footer-two>
     </div>
@@ -41,6 +41,7 @@ import FccFooterTwo from 'components/FCC_footer_two'
 export default {
     data() {
         return {
+            enterState: true,
             timeState: '全部',
             cityState: '全部',
             sortState: '综合排序',

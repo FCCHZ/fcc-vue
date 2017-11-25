@@ -286,7 +286,7 @@ export default {
               content: "",
               love: 666,
               person: 666,
-              enterState: 0
+              enterState: '0'
             },
             {
               id: 1,
@@ -302,7 +302,7 @@ export default {
               content: "",
               love: 666,
               person: 666,
-              enterState: 0
+              enterState: '0'
             },
             {
               id: 2,
@@ -318,7 +318,7 @@ export default {
               content: "",
               love: 666,
               person: 666,
-              enterState: 1
+              enterState: '1'
             },
             {
               id: 3,
@@ -334,7 +334,7 @@ export default {
               content: "",
               love: 666,
               person: 666,
-              enterState: 1
+              enterState: '1'
             },
             {
               id: 4,
@@ -350,7 +350,7 @@ export default {
               content: "",
               love: 666,
               person: 666,
-              enterState: 1
+              enterState: '1'
             },
             {
               id: 5,
@@ -366,7 +366,7 @@ export default {
               content: "",
               love: 666,
               person: 666,
-              enterState: 1
+              enterState: '1'
             },
             {
               id: 6,
@@ -382,7 +382,7 @@ export default {
               content: "",
               love: 666,
               person: 666,
-              enterState: 1
+              enterState: '1'
             },
             {
               id: 7,
@@ -398,7 +398,7 @@ export default {
               content: "",
               love: 666,
               person: 666,
-              enterState: 1
+              enterState: '1'
             }
           ]
         }

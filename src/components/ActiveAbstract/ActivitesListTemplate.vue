@@ -5,12 +5,15 @@
         <div v-on:click="toActiveDetils(item.id)" class="item" v-for="(item, index) in activites" v-bind:key="item.index">
             <div class="img">
                 <img v-bind:src="item.imgUrl" alt="">
-                <div v-if="item.enterState === '0'" class="enter">
+                <div v-if="state">
+                    <div v-if="item.enterState === '0'" class="enter">
                         报名中
+                    </div>
+                    <div v-if="item.enterState === '1'" class="noenter">
+                            已过期
+                    </div>
                 </div>
-                <div v-if="item.enterState === '1'" class="noenter">
-                        已过期
-                </div>
+                
             </div>
             <div class="title">
                 <span v-html="item.title"></span>
@@ -72,7 +75,8 @@ export default {
     activites: {
       type: Array,
       default: []
-    }
+    },
+    state: false
   },
   data() {
     return {
