@@ -57,8 +57,8 @@
 </script>
 <style lang="scss" scoped>
 .fcc_footer{
-	margin-top: 30px;
-	height: 426px;
+	margin-top: 50px;
+	height: 350px;
 	display: block;
 	width: 100%;
 	color: #FFF;
@@ -73,7 +73,7 @@
 }
 .footer_content_list {
 	display: inline-block;
-	margin-top: 40px;
+	margin-top: 20px;
 }
 .footer_content_list .footer_content_list_txt {
 	width: 190px;
@@ -97,7 +97,7 @@
 }
 .fcc_footer .footer_content {
 	width: 1080px;
-	height: 280px;
+	height: 220px;
 
 	margin: 25px auto;
 }
