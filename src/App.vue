@@ -1,6 +1,7 @@
 <template>
   <div id="app">
       <vue-header></vue-header>
+      <div class="heig"></div>
       <transition name="fade">
         <router-view class="content"></router-view>
       </transition>
@@ -10,6 +11,7 @@
 <script>
 import Header from '@/components/header'
 import FCCIcon from './assets/FCC-fontIcon/css/fccHangzhou.css'
+import Icons from './assets/FCC-font/css/fcc-font.css'
 import header from "@/components/header"
 
 export default {
@@ -36,7 +38,9 @@ export default {
   padding: 0;
   margin: 0;
 }
-
+.heig{
+  height: 50px;
+}
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.5s;
@@ -45,9 +49,7 @@ export default {
 .fade-leave-to {
   opacity: 0;
 }
-.content {
-  margin-top: 50px;
-}
+
 ul,li {
   list-style-type: none;
 }
