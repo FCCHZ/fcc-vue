@@ -23,7 +23,7 @@
 <style scoped>
 .fcc_footer{
 	margin-top: 30px;
-	height: 200px;
+	height: 150px;
 	display: block;
 	width: 100%;
 	color: #FFF;
@@ -32,17 +32,17 @@
 .fcc_footer .logo {
 	display: block;
 	margin: 0 auto;
-	padding-top: 35px;
+	padding-top: 25px;
 	height: 36px;
 	width: 270px;
 }
 .fcc_footer .fcc_footer_txt {
-	margin-top: 30px;
+	margin-top: 10px;
 }
 .fcc_footer .fcc_footer_txt p {
 	display: block;
 	text-align: center;
-	line-height: 40px;
+	line-height: 30px;
 	font-size: 14px;
 	color: #FFF;
 }

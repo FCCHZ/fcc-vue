@@ -134,7 +134,7 @@ export default {
   },
   methods: {
     goBlog(url) {
-      window.location.href = url
+      window.open(url);
     },
     toggleShade (type) {
         this.index = type;

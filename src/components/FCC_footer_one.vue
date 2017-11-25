@@ -19,7 +19,7 @@
 					</dl>
 				</div>
 				<div class="footer_content_list_txt">
-					<p>社交媒体</p>
+					<p>友情链接</p>
 				</div>
 			</div>
 			<div class="footer_content_code">
@@ -55,7 +55,7 @@
 		}
 	}
 </script>
-<style scoped>
+<style lang="scss" scoped>
 .fcc_footer{
 	margin-top: 30px;
 	height: 426px;
@@ -85,6 +85,15 @@
 .footer_content_list .footer_content_list_txt p  {
 	line-height: 44px;
 	text-align: right;
+	a {
+      color: #FFF;
+      width:100%;
+      display:block;
+      text-decoration: none;
+      &:hover {
+        color: #FF9900;
+      }
+    }
 }
 .fcc_footer .footer_content {
 	width: 1080px;
