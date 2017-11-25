@@ -436,7 +436,6 @@ $more-font-family: PingFangSC-Light
 		width: 1442px
 		height: 561px
 		margin: 0 auto
-		background: red;
 		.img
 			width: 1442px
 			height: 561px
