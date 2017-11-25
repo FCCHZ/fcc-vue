@@ -5,47 +5,63 @@ import Active from '@/view/Active/active'
 import Tool from '@/view/Tool/tool'
 import Blog from '@/view/Blog/bolg'
 import About from '@/view/AboutUs/about'
+import FAQ from '@/view/AboutUs/FAQ'
+import AboutUss from '@/view/AboutUs/AboutUs'
+import contactUs from '@/view/AboutUs/contactUs'
 import ActiveCenter from '@/view/Active/ActiveCenter/ActiveCenter'
 import ActiveDetils from '@/view/Active/ActiveDetils/ActiveDetils'
 
 Vue.use(Router)
 
 export default new Router({
-  routes: [
-    {
+  routes: [{
       path: '/',
       name: 'Hello',
       component: Hello
     },
     {
-    	path: '/active', 
-    	name: 'active',
-    	component: Active
+      path: '/active',
+      name: 'active',
+      component: Active
     },
     {
-    	path: '/activecenter', 
-    	name: 'activecenter',
-    	component: ActiveCenter
+      path: '/activecenter',
+      name: 'activecenter',
+      component: ActiveCenter
     },
     {
-    	path: '/activedetils', 
-    	name: 'activedetils',
-    	component: ActiveDetils
+      path: '/activedetils',
+      name: 'activedetils',
+      component: ActiveDetils
     },
     {
-    	path: '/tool',
-    	name: 'Tool',
-    	component: Tool
+      path: '/tool',
+      name: 'Tool',
+      component: Tool
     },
     {
-    	path: '/blog',
-    	name: 'Blog',
-    	component: Blog
+      path: '/blog',
+      name: 'Blog',
+      component: Blog
     },
     {
-    	path: '/about',
-    	name: 'About',
-    	component: About
+      path: '/about',
+      component: About,
+      children: [
+        { 
+            path: '/about/FAQ', 
+            component: FAQ 
+        },
+        { 
+            path: '/about/AboutUs', 
+            component: AboutUss 
+        },
+        { 
+            path: '/about/contactUs', 
+            component: contactUs 
+        }
+        
+      ]
     }
   ]
 })

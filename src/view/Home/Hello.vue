@@ -11,7 +11,7 @@
         <span class="title">成员博客</span>
         <router-link to="/blog" tag="span" class="more">更多>></router-link>
       </div>
-      <div class="content">
+      <div class="contents">
         <el-row :gutter="20">
           <el-col :span="6" v-for="(item, i) in banners" >
             <div class="grid_content" @click='goBlog(item.url)' :class="{mouse_move: i===index}" @mouseenter.prevent="toggleShade(i)" 
@@ -90,7 +90,7 @@ export default {
           skillList: [
             { name: 'UI设计',color:'ui' },
             { name: 'HTML' ,color:'html'},
-            { name: 'anuglar',color:'anuglar' }
+            { name: 'anuglar',color:'angular' }
           ]
         },
         {
@@ -101,8 +101,7 @@ export default {
           skillList: [
             { name: 'html' ,color:'html'},
             { name: 'js' ,color:'js'},
-            { name: 'css' ,color:'css'},
-            { name: 'angular' ,color:'angular'}
+            { name: 'css' ,color:'css'}
           ]
         },
         {
@@ -174,7 +173,7 @@ export default {
       }
     }
   }
-  .content {
+  .contents {
     width: 1080px;
     height: 100%;
   }
@@ -189,7 +188,7 @@ export default {
     margin: 0 auto;
   }
 }
-.content{
+.contents{
 margin-bottom:50px;
 }
 .grid_content {
@@ -233,10 +232,19 @@ margin-bottom:50px;
         color:#00b38c;
       }
       &.html{
-        color:#00b0f0;
+        color:#35CE23;
       }
       &.js {
-        color:#ffb86c;
+        color:#F06A0B;
+      }
+      &.css{
+        color:#17B7CF;
+      }
+      &.vue {
+        color:#48A88A;
+      }
+      &.angular{
+        color: #BC519B;
       }
     }
   }

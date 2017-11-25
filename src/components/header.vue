@@ -25,7 +25,7 @@
 		}
 	}
 </script>
-<style scoped>
+<style lang="scss" scoped>
 #header {
 	height: 50px;
 	width: 100%;
@@ -59,5 +59,18 @@
 	text-decoration: none;
 	padding: 10px 25px;
 	color: #00b800;
+	
+	&:hover{
+	color: #FF9900;
+	}
+	&:link{
+		color: #00b800;
+	}
+	&:active{
+		color: #FF9900;
+	}
+	&:focus{
+color: #FF9900;
+	}
 }
 </style>
