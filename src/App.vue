@@ -10,6 +10,7 @@
 <script>
 import Header from '@/components/header'
 import FCCIcon from './assets/FCC-fontIcon/css/fccHangzhou.css'
+import Icons from './assets/FCC-font/css/fcc-font.css'
 import header from "@/components/header"
 
 export default {

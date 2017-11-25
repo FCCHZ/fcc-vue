@@ -8,7 +8,7 @@
 		<router-link class="nav-list" to="/active">活动中心</router-link>
 		<router-link class="nav-list" :to="{name:'Tool',params:{id:666,nam:'黄金良'}}">前端工具</router-link>
 		<router-link class="nav-list" to="/blog">成员博客</router-link>
-		<router-link class="nav-list" to="/about">关于我们</router-link>
+		<router-link class="nav-list" to="/about/aboutUs">关于我们</router-link>
 	</div>
 	</div>
 </template>
@@ -41,7 +41,7 @@
 #header #header-img {
 	float: left;
 	width: 160px;
-	padding: 10px 5px;
+	padding: 14px 5px;
 	margin-left: 4%;
 }
 #header #header-img img {
@@ -57,7 +57,7 @@
 #header .nav-list {
 	display: inline-block;
 	text-decoration: none;
-	padding: 10px 25px;
+	padding: 14px 25px;
 	color: #00b800;
 	
 	&:hover{

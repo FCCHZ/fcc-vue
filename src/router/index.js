@@ -8,6 +8,10 @@ import About from '@/view/AboutUs/about'
 import FAQ from '@/view/AboutUs/FAQ'
 import AboutUss from '@/view/AboutUs/AboutUs'
 import contactUs from '@/view/AboutUs/contactUs'
+import privacyPolicy from '@/view/AboutUs/privacyPolicy'
+import CodeOfConduct from '@/view/AboutUs/CodeOfConduct'
+import TermsOfService from '@/view/AboutUs/TermsOfService'
+import AcademicHonestyPolicy from '@/view/AboutUs/AcademicHonestyPolicy'
 import ActiveCenter from '@/view/Active/ActiveCenter/ActiveCenter'
 import ActiveDetils from '@/view/Active/ActiveDetils/ActiveDetils'
 
@@ -59,6 +63,18 @@ export default new Router({
         { 
             path: '/about/contactUs', 
             component: contactUs 
+        },{ 
+            path: '/about/privacyPolicy', 
+            component: privacyPolicy 
+        },{
+            path:'/about/CodeOfConduct',
+            component: CodeOfConduct
+        },{
+            path:'/about/AcademicHonestyPolicy',
+            component:AcademicHonestyPolicy
+        },{
+            path:'/about/TermsOfService',
+            component:TermsOfService
         }
         
       ]

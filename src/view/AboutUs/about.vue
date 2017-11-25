@@ -1,17 +1,18 @@
 <template>
-  <div id="about">
+	<div>
+		<div id="about">
     <el-row :gutter="20">
       <el-col :span="6">
         <div class="aboutList">
           <ul>
             <li class="aboutListImg"><img src="../../assets/logo-navbar.png" alt=""></li>
-            <li class="aboutListTxt">关于我们</li>
-            <li class="aboutListTxt"><router-link to="/about/contactUs">联系我们</router-link></li>
+            <li class="aboutListTxt"><router-link to="/about/aboutUs">关于我们</router-link></li>
+            <li class="aboutListTxt"><router-link activeClassName="actives" to="/about/contactUs">联系我们</router-link></li>
             <li class="aboutListTxt"><router-link to="/about/FAQ">常见问题</router-link></li>
-            <li class="aboutListTxt">隐私策略</li>
-            <li class="aboutListTxt">行为准则</li>
-            <li class="aboutListTxt">学术诚信守则</li>
-            <li class="aboutListTxt">服务条款</li>
+            <li class="aboutListTxt"><router-link to="/about/privacyPolicy">隐私策略</router-link></li>
+            <li class="aboutListTxt"><router-link to="/about/CodeOfConduct">行为准则</router-link></li>
+            <li class="aboutListTxt"><router-link to="/about/AcademicHonestyPolicy">学术诚信守则</router-link></li>
+            <li class="aboutListTxt"><router-link to="/about/TermsOfService">服务条款</router-link></li>
           </ul>
         </div>
       </el-col>
@@ -21,15 +22,22 @@
         </div>
       </el-col>
     </el-row>
+    	</div>
+  <vue-Footer></vue-Footer>
+
   </div>
 </template>
 <script>
+import fccFooter from '@/components/FCC_footer_two'
 export default {
   name: 'about',
   data() {
     return {
       msg: "这里是 关于我们 页面"
     }
+  },
+   components: {
+"vue-Footer": fccFooter,
   }
 }
 
@@ -63,5 +71,7 @@ export default {
 .aboutRight {
 	margin-top:50px;
 }
-
+.actives {
+	color: #00b800;
+}
 </style>

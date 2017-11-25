@@ -5,17 +5,17 @@
 			<div class="footer_content_list">
 				<div class="footer_content_list_txt">
 					<dl>
-						<dd>关于我们</dd>
-						<dd>常见问题</dd>
-						<dd>学术诚信守则</dd>
+						<dd><router-link to="/about/aboutUs">关于我们</router-link></dd>
+						<dd><router-link to="/about/FAQ">常见问题</router-link></dd>
+						<dd><router-link to="/about/AcademicHonestyPolicy">学术诚信守则</router-link></dd>
 					</dl>
 				</div>
 				<div class="footer_content_list_txt">
 					<dl>
-						<dd>联系我们</dd>
-						<dd>隐私策略</dd>
-						<dd>行为准则</dd>
-						<dd>服务条款</dd>
+						<dd><router-link to="/about/contactUs">联系我们</router-link></dd>
+						<dd><router-link to="/about/privacyPolicy">隐私策略</router-link></dd>
+						<dd><router-link to="/about/CodeOfConduct">行为准则</router-link></dd>
+						<dd><router-link to="/about/TermsOfService">服务条款</router-link></dd>
 					</dl>
 				</div>
 				<div class="footer_content_list_txt">

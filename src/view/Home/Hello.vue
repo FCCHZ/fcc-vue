@@ -90,7 +90,7 @@ export default {
           skillList: [
             { name: 'UI设计',color:'ui' },
             { name: 'HTML' ,color:'html'},
-            { name: 'anuglar',color:'angular' }
+            { name: 'Anuglar',color:'angular' }
           ]
         },
         {
@@ -99,9 +99,9 @@ export default {
           userImg: require('../../assets/blog_yinyiming.png'),
           url: 'https://yinyimingall.github.io/blog/',
           skillList: [
-            { name: 'html' ,color:'html'},
-            { name: 'js' ,color:'js'},
-            { name: 'css' ,color:'css'}
+            { name: 'HTML' ,color:'html'},
+            { name: 'JavaScript' ,color:'js'},
+            { name: 'CSS' ,color:'css'}
           ]
         },
         {
@@ -110,9 +110,9 @@ export default {
           userImg: require('../../assets/blog_qiankaixing.jpg'),
           url: 'https://github.com/Zzhiren/zcpc ',
           skillList: [
-            { name: 'html' ,color:'html'},
-            { name: 'js' ,color:'js'},
-            { name: 'css' ,color:'css'}
+            { name: 'HTML' ,color:'html'},
+            { name: 'JavaScript' ,color:'js'},
+            { name: 'CSS' ,color:'css'}
           ]
 
         },
@@ -122,11 +122,11 @@ export default {
           userImg: require('../../assets/blog_huguangnan.jpg'),
           url: 'https://github.com/blankul',
           skillList: [
-            { name: 'html' ,color:'html'},
-            { name: 'js' ,color:'js'},
-            { name: 'css' ,color:'css'},
-            { name: 'jquery' ,color:'jquery'},
-            { name: 'vue' ,color:'vue'}
+            { name: 'HTML' ,color:'html'},
+            { name: 'JavaScript' ,color:'js'},
+            { name: 'CSS' ,color:'css'},
+            { name: 'Jquery' ,color:'jquery'},
+            { name: 'Vue' ,color:'vue'}
           ]
         }
       ]
@@ -245,6 +245,9 @@ margin-bottom:50px;
       }
       &.angular{
         color: #BC519B;
+      }
+      &.jquery{
+        color: #3648f5;
       }
     }
   }
